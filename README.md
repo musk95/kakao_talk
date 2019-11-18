@@ -76,7 +76,7 @@ action:
   service: notify.NOTIFIER_NAME
   data:
     title: Send an images
-    message: "That's an example that sends an image."
+    message: That''s an example that sends an image.
     data:
       photo:
         - url: https://i.ibb.co/jkbTKZz/hassio.png
