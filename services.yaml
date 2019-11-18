@@ -1,0 +1,12 @@
+send_message:
+  description: Send a notification.
+  fields:
+    title:
+      description: Optional title for your notification. Will be composed as '%title\n%message for text message'
+      example: 'Your Garage Door Friend'
+    message:
+      description: Message body of the notification.
+      example: The garage door has been open for 10 minutes.
+    image_url:
+      description: Remote path to an image.
+      example: 'http://k.kakaocdn.net/dn/bDgfik/btqwQWk4CRU/P6wNJJiQ3Ko21KNE1TiLw1/kakaolink40_original.png'

@@ -1,0 +1,169 @@
+<html>
+<style>
+body {
+	position: relative;
+	background: #f7f7f7;
+	margin: 0;
+	padding: 30px;
+	font-family: "Montserrat",helvetica,arial,sans-serif;
+	font-size: 14px;
+	font-weight: 300;
+	color: #66625b;
+	text-align: center;
+}
+article {
+	background: #fff;
+	border: 1px solid #e2e5e8;
+	border-radius: 8px;
+	padding: 20px 0;
+	margin-bottom: 40px;
+	box-shadow: 0 1px 20px rgba(0,0,0,.25);
+	max-width: 880px;
+	text-align: left;
+}
+article h1 a,
+article h2 a {
+	color: #2b2b1b;
+}
+article h1.entry-title {
+  padding: 0 60px;
+  letter-spacing: -1px;
+}
+article h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+.post-info {
+    padding: 0 60px;
+    font-weight: 300;
+    font-size: 1em;
+}
+.post-entry {
+    padding: 0 60px;
+    font-weight: 400;
+    font-size: 1.2em;
+    line-height: 1.5em;
+    color: #3E3F3F;
+}
+.size-full, .pic-full {
+    margin-top: .5em;
+    margin-bottom: .5em;
+    margin-left: -60px;
+    width: calc(100% + 120px);
+}
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+button {
+    width:160px;
+    background-color: #ffde03;
+    border: none;
+    color: #2d1719;
+    padding: 15px 0;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: bold;
+    margin: 4px;
+    cursor: pointer;
+    border-radius:10px 0 10px 0;
+}
+
+</style>
+<script>
+var _api_key ='{_api_key}';
+var _host ='{_host}';
+function kakao_login_click() {
+	//window.location.href = 'https://kauth.kakao.com/oauth/authorize?client_id='+_api_key+'&redirect_uri=http%3A%2F%2F'+_host+'%2Fapi%2Fkakao_talk&response_type=code';
+	window.location.href = 'https://accounts.kakao.com/login?continue=https%3A%2F%2Fkauth.kakao.com%2Foauth%2Fauthorize%3Fclient_id%3D'+
+		_api_key+
+		'%26redirect_uri%3Dhttp%253A%252F%252F'+_host+'%252Fapi%252Fkakao_talk%26response_type%3Dcode';
+}
+
+function getUrlParams() {
+    var params = {};
+    window.location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(str, key, value) { params[key] = value; });
+    return params;
+}
+
+ function visibleClass(name, value) {
+	var todayElements = document.getElementsByClassName(name), i;
+	for (i = 0; i < todayElements.length; i += 1) {
+	todayElements[i].style.display = value;
+	};
+};
+
+window.onload = function() {
+	oParam = getUrlParams();
+	
+	console.log(oParam.code);
+	if (oParam.code==undefined) {
+		visibleClass('before_login','visible');
+		visibleClass('after_login','none');
+	} 
+	else {
+		visibleClass('before_login','none');
+		visibleClass('after_login','visible');
+	}
+}
+</script>
+<body>
+<div style="display: inline-block; width:100%">
+<article id="post-14134" class="post-14134 post type-post status-publish format-standard hentry category-other tag-kakaotalk tag-share-button">
+	<h1 class="entry-title">KakaoTalk Notifier for Home Assistant</h1>
+	<div class="post-info">
+		<ul>
+			<li><span class="icon-calendar"></span> Norbember 17, 2019</li>
+			<li><span class="icon-user"></span> <a href="#" title="Created by 마이토이" rel="author">마이토이</a></li>
+		</ul>
+	</div>
+	<div style="width:100%; padding: 0 70px;">
+		<button id="kakao_login" onclick="kakao_login_click();">카카오톡 로그인</button>
+	</div>
+	<div class="post-entry">
+		<p style="color:#2d1719" class="before_login">
+		카카오톡 로그인 전에 하기의 URI를 카카오톡 <b>로그인 Redircet URI</b>에 입력해 주세요.<br>
+		</p>
+		<p class="before_login">
+			<div id="redirect_uri" class="before_login">
+<script>
+    document.write("<ul><li>http://"+window.location.host+"/api/kakao_talk</li></ul>");
+</script>
+			</div>
+		</p>
+		<p class="before_login"><br>
+		<a href="https://developers.kakao.com/">https://developers.kakao.com/</a> 에 접속하면, <i>내어플리케이션 - 설정 - 사용자 관리</i>에 있습니다.<br>
+		아래와 같은 입력창을 찾아서 입력하시면 됩니다.
+		</p>
+		<p class="before_login">
+			<image src="https://i.ibb.co/XVvRW5R/Cap-2019-11-17-03-12-53-892.png"><br>
+		</p>
+		<p class="after_login">
+			<b>카카오톡 로그인을 완료하였습니다.</b><br><br>
+			메세지를 추가로 받고자 하는 사람이 있다면, 위의 '<b>카카오톡 로그인</b>'버튼을 눌러 추가로 로그인 하시기 바랍니다.<br>
+			추가 로그인을 하신 경우, 맨 마지막에는 주 계정으로 다시한번 로그인 하셔야 합니다.
+		</p>
+		<p>
+			<img loading="lazy" 
+				src2="https://i.ibb.co/XLjwWkY/kakaotalk-hassio.png"
+				src="/api/kakao_talk?image=kakaotalk-hassio.png"
+				alt="kakaotalk_hassio" width="100%" 
+				class="aligncenter size-full wp-image-14136 lazyloaded" 
+				data-lazy-srcset="/api/kakao_talk?image=kakaotalk-hassio.png 1800w, /api/kakao_talk?image=kakaotalk-hassio.png 300w, /api/kakao_talk?image=kakaotalk-hassio.png 768w, /api/kakao_talk?image=kakaotalk-hassio.png 1024w" 
+				data-lazy-sizes="(max-width: 1800px) 100vw, 1800px" 
+				data-lazy-src="/api/kakao_talk?image=kakaotalk-hassio.png" 
+				sizes="(max-width: 1800px) 100vw, 1800px" 
+				srcset="/api/kakao_talk?image=kakaotalk-hassio.png 1800w, /api/kakao_talk?image=kakaotalk-hassio.png 300w, /api/kakao_talk?image=kakaotalk-hassio.png 768w, /api/kakao_talk?image=kakaotalk-hassio.png 1024w" 
+				data-was-processed="true">
+		</p>
+	</div>
+</article>
+</div>
+</body>
+</html>
