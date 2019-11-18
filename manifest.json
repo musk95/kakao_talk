@@ -1,7 +1,7 @@
 {
   "domain": "kakao_talk",
   "name": "Kakao Talk",
-  "documentation": "https://www.home-assistant.io/integrations/google_assistant",
+  "documentation": "https://github.com/musk95/kakao_talk",
   "requirements": [],
   "dependencies": ["http"],
   "codeowners": []
