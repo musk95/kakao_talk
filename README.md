@@ -88,5 +88,7 @@ action:
 >>  **required**: true to support Photo<br>
 >>  **type**: string<br>
 
+![image_sample](https://user-images.githubusercontent.com/11463289/69052464-6e250900-0a4a-11ea-8c5c-844caa8d9983.png)
+
 [hass]: https://home-assistant.io
 [hass2]: https://www.home-assistant.io/getting-started/automation/
