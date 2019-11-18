@@ -54,8 +54,8 @@ To use notifications, please see the [getting started with automation page][hass
 action:
   service: notify.NOTIFIER_NAME
   data:
-    title: '*Send a message*'
-    message: "That's an example that _sends_ a *formatted* message with a custom inline keyboard."
+    title: Send a message
+    message: That''s an example that _sends_ a formatted message with a custom inline keyboard.
 ```
 
 #### CONFIGURATION VARIABLES
