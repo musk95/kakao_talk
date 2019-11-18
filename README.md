@@ -45,7 +45,7 @@ Login KakaoTalk service by clicking '카카오톡 로그인' button.<br>
 
 ## Configuration
 
-To use notifications, please see the [getting started with automation page](/getting-started/automation/).
+To use notifications, please see the [getting started with automation page][hass2].
 
 ### Text message
 
@@ -89,4 +89,4 @@ action:
 >>  **type**: string<br>
 
 [hass]: https://home-assistant.io
-[getting started with automation page]: https://www.home-assistant.io/getting-started/automation/
+[hass2]: https://www.home-assistant.io/getting-started/automation/
