@@ -79,7 +79,7 @@ action:
     message: "That's an example that sends an image."
     data:
       photo:
-        - url: http://192.168.1.28/camera.jpg
+        - url: https://i.ibb.co/jkbTKZz/hassio.png
 ```
 
 #### CONFIGURATION VARIABLES
