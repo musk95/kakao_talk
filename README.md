@@ -12,7 +12,7 @@ The **kakao_talk** platform uses KakaoTalk to deliver notifications from [Home A
        $ cd ~/.homeassistant
        $ mkdir custom_components
        $ cd custom_components
-       $ git clone https://github.com/musk95/kakao_talk.git kakaotalk
+       $ git clone https://github.com/musk95/kakao_talk.git kakao_talk
        
 * Restart the Home Assistant service
 
