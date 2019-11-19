@@ -111,7 +111,7 @@ class KakaoConfig:
                 _LOGGER.debug("KakaoTalkView [message] Result {}".format(_res))
 
     async def get_setup_page(self):
-        _path = "{}/custom_components/kakaotalk/setup.html".format(self.hass.config.config_dir)
+        _path = "{}/custom_components/kakao_talk/setup.html".format(self.hass.config.config_dir)
 
         _filecontent = ""
         try:
@@ -215,7 +215,7 @@ class KakaoTalkView(HomeAssistantView):
         _message = None
         _query = request.rel_url.query
         if 'image' in _query:
-            _path = "{}/custom_components/kakaotalk/images/{}".format(self.config.hass.config.config_dir, _query['image'])
+            _path = "{}/custom_components/kakao_talk/images/{}".format(self.config.hass.config.config_dir, _query['image'])
             response = web.FileResponse(_path)
             response.content_type = 'image/png'
             return response
