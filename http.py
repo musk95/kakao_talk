@@ -252,8 +252,8 @@ class KakaoTalkView(HomeAssistantView):
             return web.Response(text='OK', status=200)
 
         # Display Login Page
-        if not is_local(request[KEY_REAL_IP]):
-            return web.Response(text="401: Unauthorized", status=401)
+        #if not is_local(request[KEY_REAL_IP]):
+        #    return web.Response(text="401: Unauthorized", status=401)
 
         if request.cookies is not None:
             cookie = request.cookies #('name_of_cookie')
