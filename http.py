@@ -160,8 +160,9 @@ class KakaoConfig:
         if 'error' in _ret:
             _LOGGER.warning("KakaoTalk [Friends] Error : %s", _ret['error'])
             return
-        for friend in _ret['elements']:
-            self._friends.append(friend['uuid'])
+        if 'elements' in _ret:
+            for friend in _ret['elements']:
+                self._friends.append(friend['uuid'])
 
         _LOGGER.debug("KakaoTalk [Friends] %s", json.dumps(self._friends))
 
