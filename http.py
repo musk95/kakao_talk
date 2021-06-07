@@ -6,7 +6,7 @@ import os
 from aiohttp import web
 from urllib.parse import urlparse
 from homeassistant.components.http import HomeAssistantView
-from homeassistant.components.http.const import KEY_REAL_IP
+#from homeassistant.components.http.const import KEY_REAL_IP
 from homeassistant.core import callback, ServiceCall
 import homeassistant.util as hass_util
 from homeassistant.util.network import is_local
