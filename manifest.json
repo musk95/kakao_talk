@@ -1,6 +1,7 @@
 {
   "domain": "kakao_talk",
   "name": "Kakao Talk",
+  "version": "0.1.10",
   "documentation": "https://github.com/musk95/kakao_talk",
   "requirements": [],
   "dependencies": ["http"],
